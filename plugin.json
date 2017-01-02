@@ -1,0 +1,17 @@
+{
+  "description": {
+    "en": "Currency",
+    "ru": "Currency",
+    "uk": "Currency"
+  },
+  "url": "https://github.com/pytsite/plugin-currency",
+  "author": {
+    "name": "Alexander Shepetko",
+    "email": "a@shepetko.com",
+    "url": "https://shepetko.com"
+  },
+  "requires": {
+    "packages": [],
+    "plugins": []
+  }
+}
