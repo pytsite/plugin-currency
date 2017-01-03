@@ -1,8 +1,8 @@
 {
   "description": {
     "en": "Currency",
-    "ru": "Currency",
-    "uk": "Currency"
+    "ru": "Валюта",
+    "uk": "Валюта"
   },
   "url": "https://github.com/pytsite/plugin-currency",
   "author": {

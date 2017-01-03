@@ -56,10 +56,10 @@ class Rate(_odm_ui.model.UIEntity):
         :type browser: pytsite.odm_ui._browser.Browser
         """
         browser.data_fields = [
-            ('date', 'pytsite.currency@date'),
-            ('source', 'pytsite.currency@source'),
-            ('destination', 'pytsite.currency@destination'),
-            ('rate', 'pytsite.currency@rate'),
+            ('date', 'currency@date'),
+            ('source', 'currency@source'),
+            ('destination', 'currency@destination'),
+            ('rate', 'currency@rate'),
         ]
         browser.default_sort_field = 'date'
 

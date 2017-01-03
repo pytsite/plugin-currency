@@ -18,7 +18,7 @@ def odm_ui_user_m_form_setup_widgets(frm: _form.Form, entity: _auth_storage_odm.
     cnt_wrapper.add_widget(_currency_widget.Select(
         uid='currency',
         weight=105,
-        label=_lang.t('pytsite.currency@currency'),
+        label=_lang.t('currency@currency'),
         value=entity.f_get('currency'),
         h_size='col-xs-12 col-sm-6 col-md-5 col-lg-4',
         required=True,

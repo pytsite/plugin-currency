@@ -17,10 +17,11 @@ def _init():
     from . import _api, _model, _eh
 
     # Permission group
-    permissions.define_group('currency', 'pytsite.currency@currency')
+    permissions.define_group('currency', 'currency@currency')
 
     # Language package
-    lang.register_package(__name__)
+    lang.register_package(__name__)  # For ODM UI
+    lang.register_package(__name__, alias='currency')
 
     # Loading currencies from registry config
     for code in reg.get('currency.list', ('USD',)):
@@ -33,11 +34,11 @@ def _init():
     odm.register_model('currency_rate', model.Rate)
 
     # Admin menu
-    admin.sidebar.add_section('currency', 'pytsite.currency@currency', 260)
+    admin.sidebar.add_section('currency', 'currency@currency', 260)
     admin.sidebar.add_menu(
         'currency',
         'rates',
-        'pytsite.currency@rates',
+        'currency@rates',
         router.ep_path('pytsite.odm_ui@browse', {'model': 'currency_rate'}),
         'fa fa-usd',
         weight=10,
@@ -54,7 +55,7 @@ def _init():
     events.listen('pytsite.auth.http_api.get_user', _eh.auth_http_api_get_user)
 
     # HTTP API handlers
-    http_api.register_handler('currency', 'pytsite.currency.http_api')
+    http_api.register_handler('currency', __name__ + '.http_api')
 
 
 # Package initialization

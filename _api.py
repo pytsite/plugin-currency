@@ -148,9 +148,9 @@ def get_title(currency: str, short: bool = False) -> str:
 
     try:
         if short:
-            return _lang.t('pytsite.currency@currency_short_title_' + currency, exceptions=True)
+            return _lang.t('currency@currency_short_title_' + currency, exceptions=True)
         else:
-            return _lang.t('pytsite.currency@currency_title_' + currency, exceptions=True)
+            return _lang.t('currency@currency_title_' + currency, exceptions=True)
 
     except _lang.error.TranslationError:
         if short:
@@ -166,7 +166,7 @@ def get_symbol(currency: str) -> str:
         raise _error.CurrencyNotDefined("Currency '{}' is not defined.".format(currency))
 
     try:
-        return _lang.t('pytsite.currency@currency_symbol_' + currency, exceptions=True)
+        return _lang.t('currency@currency_symbol_' + currency, exceptions=True)
 
     except _lang.error.TranslationError:
         return _lang.t('currency_symbol_' + currency)
