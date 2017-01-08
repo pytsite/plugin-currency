@@ -32,7 +32,7 @@ odm_ui_form_title_create_currency_rate: 'Створення обмінного �
 odm_ui_form_title_modify_currency_rate: 'Зміна обмінного курсу'
 odm_ui_form_title_delete_currency_rate: 'Видалення обмінних курсів'
 
-odm_perm_create_currency_rate: 'Створення обмінних курсів'
-odm_perm_view_currency_rate: 'Перегляд обмінних курсів'
-odm_perm_modify_currency_rate: 'Зміна обмінних курсів'
-odm_perm_delete_currency_rate: 'Видалення обмінних курсів'
+odm_auth_create_currency_rate: 'Створення обмінних курсів'
+odm_auth_view_currency_rate: 'Перегляд обмінних курсів'
+odm_auth_modify_currency_rate: 'Зміна обмінних курсів'
+odm_auth_delete_currency_rate: 'Видалення обмінних курсів'

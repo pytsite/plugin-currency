@@ -20,7 +20,6 @@ def _init():
     permissions.define_group('currency', 'currency@currency')
 
     # Language package
-    lang.register_package(__name__)  # For ODM UI
     lang.register_package(__name__, alias='currency')
 
     # Loading currencies from registry config
@@ -43,9 +42,9 @@ def _init():
         'fa fa-usd',
         weight=10,
         permissions=(
-            'pytsite.odm_perm.create.currency_rate',
-            'pytsite.odm_perm.modify.currency_rate',
-            'pytsite.odm_perm.delete.currency_rate',
+            'pytsite.odm_auth.create.currency_rate',
+            'pytsite.odm_auth.modify.currency_rate',
+            'pytsite.odm_auth.delete.currency_rate',
         )
     )
 

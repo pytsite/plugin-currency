@@ -32,7 +32,7 @@ odm_ui_form_title_create_currency_rate: "Create exchange rate"
 odm_ui_form_title_modify_currency_rate: 'Modify exchange rate'
 odm_ui_form_title_delete_currency_rate: 'Delete exchange rates'
 
-odm_perm_create_currency_rate: 'Create exchange rates'
-odm_perm_view_currency_rate: 'View exchange rates'
-odm_perm_modify_currency_rate: 'Modify exchange rates'
-odm_perm_delete_currency_rate: 'Delete exchange rates'
+odm_auth_create_currency_rate: 'Create exchange rates'
+odm_auth_view_currency_rate: 'View exchange rates'
+odm_auth_modify_currency_rate: 'Modify exchange rates'
+odm_auth_delete_currency_rate: 'Delete exchange rates'
