@@ -15,7 +15,7 @@ def odm_model_user_setup(entity: _auth_storage_odm.model.ODMUser):
 
 def odm_ui_user_m_form_setup_widgets(frm: _form.Form, entity: _auth_storage_odm.model.ODMUser):
     cnt_wrapper = frm.get_widget('content-wrapper')  # type: _widget.Container
-    cnt_wrapper.add_widget(_currency_widget.Select(
+    cnt_wrapper.append_child(_currency_widget.Select(
         uid='currency',
         weight=105,
         label=_lang.t('currency@currency'),
