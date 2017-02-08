@@ -7,7 +7,7 @@ __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
 
 
-def get_list(**kwargs) -> dict:
+def get_list(inp: dict) -> dict:
     """Get currencies list.
     """
     r = {}

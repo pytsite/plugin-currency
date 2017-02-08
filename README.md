@@ -2,6 +2,11 @@
 
 ## Changelog
 
+
+### 0.1.4 (2017-02-08)
+Fixed HTTP API handler registration.
+
+
 ### 0.1.3 (2017-01-12)
 Support for latest PytSite `form`'s changes.
 

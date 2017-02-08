@@ -14,7 +14,7 @@ def _init():
     """Init wrapper.
     """
     from pytsite import reg, tpl, lang, admin, router, odm, events, permissions, http_api
-    from . import _api, _model, _eh
+    from . import _api, _model, _eh, _http_api
 
     # Permission group
     permissions.define_group('currency', 'currency@currency')
@@ -54,7 +54,7 @@ def _init():
     events.listen('pytsite.auth.http_api.get_user', _eh.auth_http_api_get_user)
 
     # HTTP API handlers
-    http_api.register_handler('currency', __name__ + '.http_api')
+    http_api.handle('GET', 'currency', _http_api.get_list, 'currency@get_list')
 
 
 # Package initialization
