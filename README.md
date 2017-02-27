@@ -3,6 +3,10 @@
 ## Changelog
 
 
+### 0.1.5 (2017-02-27)
+Fixed HTML currency formatting.
+
+
 ### 0.1.4 (2017-02-08)
 Fixed HTTP API handler registration.
 

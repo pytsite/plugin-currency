@@ -125,9 +125,9 @@ def fmt(currency: str, amount, decimal_places: int = 2, html: bool = False, use_
     symbol = get_symbol(currency) if not use_title else get_title(currency, True)
 
     if html:
-        integer = _re.sub('^(\d+).+$', '<span class="amount-integer">\\1</span>', amount)
+        integer = _re.sub('^(\d+).*$', '<span class="amount-integer">\\1</span>', amount)
         decimal = ''
-        if decimal_places:
+        if decimal_places and '.' in amount:
             decimal = _re.sub('^\d+\.(\d+)$',
                               '<span class="amount-point">.</span><span class="amount-decimal">\\1</span>', amount)
 
