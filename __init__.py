@@ -14,7 +14,7 @@ def _init():
     """Init wrapper.
     """
     from pytsite import reg, tpl, lang, admin, router, odm, events, permissions, http_api
-    from . import _api, _model, _eh, _http_api
+    from . import _api, _model, _eh, _http_api_controllers
 
     # Permission group
     permissions.define_group('currency', 'currency@currency')
@@ -38,7 +38,7 @@ def _init():
         'currency',
         'rates',
         'currency@rates',
-        router.ep_path('pytsite.odm_ui@browse', {'model': 'currency_rate'}),
+        router.rule_path('pytsite.odm_ui@browse', {'model': 'currency_rate'}),
         'fa fa-usd',
         weight=10,
         permissions=(
@@ -54,7 +54,7 @@ def _init():
     events.listen('pytsite.auth.http_api.get_user', _eh.auth_http_api_get_user)
 
     # HTTP API handlers
-    http_api.handle('GET', 'currency', _http_api.get_list, 'currency@get_list')
+    http_api.handle('GET', 'currency', _http_api_controllers.GetList(), 'currency@get_list')
 
 
 # Package initialization
