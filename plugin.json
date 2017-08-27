@@ -1,4 +1,6 @@
 {
+  "name": "plugins.currency",
+  "version": "0.1.7",
   "description": {
     "en": "Currency",
     "ru": "Currency",
