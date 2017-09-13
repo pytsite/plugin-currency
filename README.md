@@ -3,6 +3,10 @@
 ## Changelog
 
 
+### 0.1.8 (2017-09-13)
+Documentation fix.
+
+
 ### 0.1.7 (2017-08-27)
 `plugin.json` updated.
 
