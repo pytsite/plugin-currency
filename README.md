@@ -3,12 +3,16 @@
 ## Changelog
 
 
+### 0.1.10 (2017-09-14)
+`plugin.json` fixed.
+
+
 ### 0.1.9 (2017-09-14)
-HTTP API endpoint path fix.
+HTTP API endpoint path fixed.
 
 
 ### 0.1.8 (2017-09-13)
-Documentation fix.
+Documentation fixed.
 
 
 ### 0.1.7 (2017-08-27)
