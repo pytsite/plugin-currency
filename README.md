@@ -3,6 +3,10 @@
 ## Changelog
 
 
+### 0.1.9 (2017-09-14)
+HTTP API endpoint path fix.
+
+
 ### 0.1.8 (2017-09-13)
 Documentation fix.
 
