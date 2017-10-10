@@ -1,4 +1,4 @@
-"""PytSite Currency Models
+"""PytSite Currency Plugin  Models
 """
 from typing import Tuple as _Tuple
 from decimal import Decimal as _Decimal
@@ -28,7 +28,7 @@ class Rate(_odm_ui.model.UIEntity):
         self.define_index([('date', _odm.I_DESC), ('source', _odm.I_ASC), ('destination', _odm.I_ASC)])
 
     @classmethod
-    def odm_auth_permissions(cls) -> _Tuple[str]:
+    def odm_auth_permissions(cls) -> _Tuple[str, ...]:
         """Get permissions supported by model.
         """
         return 'create', 'modify', 'delete'

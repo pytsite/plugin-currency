@@ -1,4 +1,4 @@
-"""PytSite Currency Package.
+"""PytSite Currency Plugin
 """
 # Public API
 from . import _model as model

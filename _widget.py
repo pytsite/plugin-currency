@@ -1,4 +1,4 @@
-"""Currency Widgets
+"""PytSite Currency Plugin Widgets
 """
 from pytsite import widget as _widget
 from . import _api

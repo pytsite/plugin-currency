@@ -1,4 +1,4 @@
-"""PytSite Currency Event Handlers.
+"""PytSite Currency Plugin  Event Handlers
 """
 from pytsite import form as _form, odm as _odm, lang as _lang, widget as _widget, auth as _auth, \
     auth_storage_odm as _auth_storage_odm

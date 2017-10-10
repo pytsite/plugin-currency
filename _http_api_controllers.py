@@ -1,4 +1,4 @@
-"""Currency HTTP API.
+"""PytSite Currency Plugin  HTTP API
 """
 from pytsite import routing as _routing
 from . import _api

@@ -1,4 +1,4 @@
-"""PytSite Currency Errors.
+"""PytSite Currency Plugin Errors
 """
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'

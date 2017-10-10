@@ -1,4 +1,4 @@
-"""Currency API Functions
+"""PytSite Currency Plugin API Functions
 """
 import re as _re
 from typing import Tuple as _Tuple
@@ -12,7 +12,7 @@ __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
 
 _currencies = []
-__main = None
+_main = None  # type: str
 
 
 def define(code: str):
@@ -31,7 +31,7 @@ def define(code: str):
     _currencies = sorted(_currencies)
 
 
-def get_all(include_main: bool = True) -> _Tuple[str]:
+def get_all(include_main: bool = True) -> _Tuple[str, ...]:
     """Get defined currencies.
     """
     if not _currencies:
@@ -40,7 +40,7 @@ def get_all(include_main: bool = True) -> _Tuple[str]:
     if include_main:
         return tuple(_currencies)
     else:
-        return tuple([code for code in _currencies if code != __main])
+        return tuple([code for code in _currencies if code != _main])
 
 
 def get_main() -> str:
@@ -49,7 +49,7 @@ def get_main() -> str:
     if not _currencies:
         raise _error.NoCurrenciesDefined('No currencies was defined.')
 
-    return __main
+    return _main
 
 
 def set_main(code: str):
@@ -58,8 +58,8 @@ def set_main(code: str):
     if code not in _currencies:
         raise _error.CurrencyNotDefined("Currency '{}' is not defined.".format(code))
 
-    global __main
-    __main = code
+    global _main
+    _main = code
 
 
 def get_rate(source: str, destination: str, date: _datetime = None) -> _Decimal:
@@ -82,7 +82,7 @@ def get_rate(source: str, destination: str, date: _datetime = None) -> _Decimal:
         return f.first().f_get('rate')
     else:
         # Trying to find reverse rate
-        f.remove_where('source').remove_where('destination')
+        f.remove_field('source').remove_field('destination')
         f.eq('source', destination)
         f.eq('destination', source)
         if f.count():

@@ -1,10 +1,10 @@
 {
   "name": "currency",
-  "version": "0.1.10",
+  "version": "1.0",
   "description": {
     "en": "Currency",
-    "ru": "Currency",
-    "uk": "Currency"
+    "ru": "Валюта",
+    "uk": "Валюта"
   },
   "url": "https://github.com/pytsite/plugin-currency",
   "author": {
