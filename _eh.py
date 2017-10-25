@@ -25,10 +25,10 @@ def odm_ui_user_m_form_setup_widgets(frm: _form.Form, entity: _auth_storage_odm.
     ))
 
 
-def auth_http_api_get_user(user: _auth.model.AbstractUser, response: dict):
+def auth_http_api_get_user(user: _auth.model.AbstractUser, json: dict):
     if not isinstance(user, _auth_storage_odm.model.User):
         return
 
     c_user = _auth.get_current_user()
     if c_user == user or c_user.is_admin:
-        response['currency'] = user.get_field('currency')
+        json['currency'] = user.get_field('currency')
