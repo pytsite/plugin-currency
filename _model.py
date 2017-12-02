@@ -3,7 +3,7 @@
 from typing import Tuple as _Tuple
 from decimal import Decimal as _Decimal
 from datetime import datetime as _datetime
-from pytsite import odm as _odm, odm_ui as _odm_ui, widget as _widget, form as _form
+from plugins import widget as _widget, odm as _odm, odm_ui as _odm_ui, form as _form
 from . import _widget as _currency_widget, _api
 
 __author__ = 'Alexander Shepetko'
@@ -14,6 +14,7 @@ __license__ = 'MIT'
 class Rate(_odm_ui.model.UIEntity):
     """Currency Exchange Rate Model
     """
+
     def _setup_fields(self):
         """Hook.
         """
@@ -53,7 +54,7 @@ class Rate(_odm_ui.model.UIEntity):
     def odm_ui_browser_setup(cls, browser):
         """Setup ODM UI browser hook.
 
-        :type browser: pytsite.odm_ui._browser.Browser
+        :type browser: odm_ui._browser.Browser
         """
         browser.data_fields = [
             ('date', 'currency@date'),

@@ -1,7 +1,7 @@
 """PytSite Currency Plugin  Event Handlers
 """
-from pytsite import form as _form, odm as _odm, lang as _lang, widget as _widget, auth as _auth, \
-    auth_storage_odm as _auth_storage_odm
+from pytsite import lang as _lang
+from plugins import widget as _widget, form as _form, auth as _auth, odm as _odm, auth_storage_odm as _auth_storage_odm
 from . import _widget as _currency_widget, _api
 
 __author__ = 'Alexander Shepetko'

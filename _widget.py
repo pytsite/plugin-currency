@@ -1,6 +1,6 @@
 """PytSite Currency Plugin Widgets
 """
-from pytsite import widget as _widget
+from plugins import widget as _widget
 from . import _api
 
 __author__ = 'Alexander Shepetko'
