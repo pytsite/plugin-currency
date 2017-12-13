@@ -1,18 +1,19 @@
 """PytSite Currency Plugin
 """
-# Public API
-from . import _model as model
-from ._api import define, get_all, get_main, set_main, get_rate, exchange, fmt, get_title, get_symbol
-from . import _widget as widget, _error as error
-
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
 
+from pytsite import plugman as _plugman
 
-def _init():
-    """Init wrapper.
-    """
+if _plugman.is_installed(__name__):
+    # Public API
+    from . import _model as model
+    from ._api import define, get_all, get_main, set_main, get_rate, exchange, fmt, get_title, get_symbol
+    from . import _widget as widget, _error as error
+
+
+def plugin_load():
     from pytsite import reg, tpl, lang, router, events
     from plugins import permissions, odm, admin, http_api
     from . import _api, _model, _eh, _http_api_controllers
@@ -50,13 +51,9 @@ def _init():
     )
 
     # Event handlers
-    events.listen('odm.model.user.setup_fields', _eh.odm_model_user_setup)
-    events.listen('odm_ui.user.m_form_setup_widgets', _eh.odm_ui_user_m_form_setup_widgets)
-    events.listen('auth.http_api.get_user', _eh.auth_http_api_get_user)
+    events.listen('odm@model.user.setup_fields', _eh.odm_model_user_setup)
+    events.listen('odm_ui@user.m_form_setup_widgets', _eh.odm_ui_user_m_form_setup_widgets)
+    events.listen('auth@http_api.get_user', _eh.auth_http_api_get_user)
 
     # HTTP API handlers
     http_api.handle('GET', 'currency/list', _http_api_controllers.GetList, 'currency@get_list')
-
-
-# Package initialization
-_init()
