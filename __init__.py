@@ -14,12 +14,9 @@ if _plugman.is_installed(__name__):
 
 
 def plugin_load():
-    from pytsite import reg, tpl, lang, router, events
-    from plugins import permissions, odm, admin, http_api
-    from . import _api, _model, _eh, _http_api_controllers
-
-    # Permission group
-    permissions.define_group('currency', 'currency@currency')
+    from pytsite import reg, lang, events
+    from plugins import odm, permissions
+    from . import _api, _model, _eh
 
     # Language package
     lang.register_package(__name__)
@@ -28,11 +25,25 @@ def plugin_load():
     for code in reg.get('currency.list', ('USD',)):
         _api.define(code)
 
-    # Tpl globals
-    tpl.register_global('currency_fmt', _api.fmt)
+    # Permission group
+    permissions.define_group('currency', 'currency@currency')
 
     # ODM models
     odm.register_model('currency_rate', model.Rate)
+
+    # Event handlers
+    events.listen('odm@model.user.setup_fields', _eh.odm_model_user_setup)
+    events.listen('odm_ui@user.m_form_setup_widgets', _eh.odm_ui_user_m_form_setup_widgets)
+    events.listen('auth@http_api.get_user', _eh.auth_http_api_get_user)
+
+
+def plugin_load_uwsgi():
+    from pytsite import router, tpl
+    from plugins import admin, http_api
+    from . import _api, _http_api_controllers
+
+    # Tpl globals
+    tpl.register_global('currency_fmt', _api.fmt)
 
     # Admin menu
     admin.sidebar.add_section('currency', 'currency@currency', 260)
@@ -49,11 +60,6 @@ def plugin_load():
             'odm_auth.delete.currency_rate',
         )
     )
-
-    # Event handlers
-    events.listen('odm@model.user.setup_fields', _eh.odm_model_user_setup)
-    events.listen('odm_ui@user.m_form_setup_widgets', _eh.odm_ui_user_m_form_setup_widgets)
-    events.listen('auth@http_api.get_user', _eh.auth_http_api_get_user)
 
     # HTTP API handlers
     http_api.handle('GET', 'currency/list', _http_api_controllers.GetList, 'currency@get_list')
