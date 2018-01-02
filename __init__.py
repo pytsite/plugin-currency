@@ -32,9 +32,9 @@ def plugin_load():
     odm.register_model('currency_rate', model.Rate)
 
     # Event handlers
-    events.listen('odm@model.user.setup_fields', _eh.odm_model_user_setup)
-    events.listen('odm_ui@user.m_form_setup_widgets', _eh.odm_ui_user_m_form_setup_widgets)
-    events.listen('auth@http_api.get_user', _eh.auth_http_api_get_user)
+    events.listen('odm@model.setup_fields.user', _eh.odm_model_user_setup)
+    events.listen('odm_ui@m_form_setup_widgets.user', _eh.odm_ui_user_m_form_setup_widgets)
+    events.listen('auth_http_api@get_user', _eh.auth_http_api_get_user)
 
 
 def plugin_load_uwsgi():
