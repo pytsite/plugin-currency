@@ -4,13 +4,10 @@ __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
 
-from pytsite import plugman as _plugman
-
-if _plugman.is_installed(__name__):
-    # Public API
-    from . import _model as model
-    from ._api import define, get_all, get_main, set_main, get_rate, exchange, fmt, get_title, get_symbol
-    from . import _widget as widget, _error as error
+# Public API
+from . import _model as model
+from ._api import define, get_all, get_main, set_main, get_rate, exchange, fmt, get_title, get_symbol
+from . import _widget as widget, _error as error
 
 
 def plugin_load():
@@ -31,19 +28,21 @@ def plugin_load():
     # ODM models
     odm.register_model('currency_rate', model.Rate)
 
-    # Event handlers
+    # Events handlers
     events.listen('odm@model.setup_fields.user', _eh.odm_model_user_setup)
-    events.listen('odm_ui@m_form_setup_widgets.user', _eh.odm_ui_user_m_form_setup_widgets)
-    events.listen('auth_http_api@get_user', _eh.auth_http_api_get_user)
 
 
 def plugin_load_uwsgi():
-    from pytsite import router, tpl
+    from pytsite import router, tpl, events
     from plugins import admin, http_api
-    from . import _api, _http_api_controllers
+    from . import _api, _http_api_controllers, _eh
 
     # Tpl globals
     tpl.register_global('currency_fmt', _api.fmt)
+
+    # Events handlers
+    events.listen('odm_ui@m_form_setup_widgets.user', _eh.odm_ui_user_m_form_setup_widgets)
+    events.listen('auth_http_api@get_user', _eh.auth_http_api_get_user)
 
     # Admin menu
     admin.sidebar.add_section('currency', 'currency@currency', 260)
@@ -55,9 +54,9 @@ def plugin_load_uwsgi():
         'fa fa-usd',
         weight=10,
         permissions=(
-            'odm_auth.create.currency_rate',
-            'odm_auth.modify.currency_rate',
-            'odm_auth.delete.currency_rate',
+            'odm_auth@create.currency_rate',
+            'odm_auth@modify.currency_rate',
+            'odm_auth@delete.currency_rate',
         )
     )
 

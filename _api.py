@@ -1,5 +1,9 @@
 """PytSite Currency Plugin API Functions
 """
+__author__ = 'Alexander Shepetko'
+__email__ = 'a@shepetko.com'
+__license__ = 'MIT'
+
 import re as _re
 from typing import Tuple as _Tuple
 from datetime import datetime as _datetime
@@ -7,10 +11,6 @@ from decimal import Decimal as _Decimal
 from pytsite import lang as _lang
 from plugins import odm as _odm
 from . import _error
-
-__author__ = 'Alexander Shepetko'
-__email__ = 'a@shepetko.com'
-__license__ = 'MIT'
 
 _currencies = []
 _main = None  # type: str

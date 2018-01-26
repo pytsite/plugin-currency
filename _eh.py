@@ -1,12 +1,12 @@
 """PytSite Currency Plugin  Event Handlers
 """
-from pytsite import lang as _lang
-from plugins import widget as _widget, form as _form, auth as _auth, odm as _odm, auth_storage_odm as _auth_storage_odm
-from . import _widget as _currency_widget, _api
-
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
+
+from pytsite import lang as _lang
+from plugins import widget as _widget, form as _form, auth as _auth, odm as _odm, auth_storage_odm as _auth_storage_odm
+from . import _widget as _currency_widget, _api
 
 
 def odm_model_user_setup(entity: _auth_storage_odm.model.ODMUser):

@@ -3,6 +3,11 @@
 ## Changelog
 
 
+### 1.3.3 (2018-01-26)
+
+Events names fixed.
+
+
 ### 1.3.2 (2018-01-02)
 
 Events names refactoring.

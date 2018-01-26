@@ -1,14 +1,14 @@
 """PytSite Currency Plugin  Models
 """
+__author__ = 'Alexander Shepetko'
+__email__ = 'a@shepetko.com'
+__license__ = 'MIT'
+
 from typing import Tuple as _Tuple
 from decimal import Decimal as _Decimal
 from datetime import datetime as _datetime
 from plugins import widget as _widget, odm as _odm, odm_ui as _odm_ui, form as _form
 from . import _widget as _currency_widget, _api
-
-__author__ = 'Alexander Shepetko'
-__email__ = 'a@shepetko.com'
-__license__ = 'MIT'
 
 
 class Rate(_odm_ui.model.UIEntity):

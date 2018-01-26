@@ -1,16 +1,17 @@
 """PytSite Currency Plugin Widgets
 """
-from plugins import widget as _widget
-from . import _api
-
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
+
+from plugins import widget as _widget
+from . import _api
 
 
 class Select(_widget.select.Select):
     """Currency Select Widget
     """
+
     def __init__(self, uid: str, **kwargs):
         """Init.
         """
