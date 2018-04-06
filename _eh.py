@@ -30,5 +30,5 @@ def auth_http_api_get_user(user: _auth.model.AbstractUser, json: dict):
         return
 
     c_user = _auth.get_current_user()
-    if c_user == user or c_user.is_admin:
+    if c_user == user or c_user.is_admin_or_dev:
         json['currency'] = user.get_field('currency')

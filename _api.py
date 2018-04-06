@@ -83,7 +83,6 @@ def get_rate(source: str, destination: str, date: _datetime = None) -> _Decimal:
         return f.first().f_get('rate')
     else:
         # Trying to find reverse rate
-        f.remove_field('source').remove_field('destination')
         f.eq('source', destination)
         f.eq('destination', source)
         if f.count():

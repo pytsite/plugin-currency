@@ -3,6 +3,11 @@
 ## Changelog
 
 
+### 1.3.4 (2018-04-06)
+
+Permissions checking fixed.
+
+
 ### 1.3.3 (2018-01-26)
 
 Events names fixed.
