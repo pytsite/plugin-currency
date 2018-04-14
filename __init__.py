@@ -50,7 +50,7 @@ def plugin_load_uwsgi():
         'currency',
         'rates',
         'currency@rates',
-        router.rule_path('odm_ui@browse', {'model': 'currency_rate'}),
+        router.rule_path('odm_ui@admin_browse', {'model': 'currency_rate'}),
         'fa fa-usd',
         weight=10,
         permissions=(

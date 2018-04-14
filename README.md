@@ -3,6 +3,11 @@
 ## Changelog
 
 
+### 1.4 (2018-04-14)
+
+Support of `odm_ui-3.0`.
+
+
 ### 1.3.4 (2018-04-06)
 
 Permissions checking fixed.
