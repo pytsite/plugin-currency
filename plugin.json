@@ -1,6 +1,6 @@
 {
   "name": "currency",
-  "version": "1.5",
+  "version": "1.6",
   "description": {
     "en": "Currency",
     "ru": "Валюта",
@@ -16,6 +16,7 @@
     "plugins": [
       "auth>=3.0",
       "auth_storage_odm",
+      "odm_auth>=1.9",
       "odm_ui>=3.0",
       "permissions"
     ]

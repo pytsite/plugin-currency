@@ -1,6 +1,12 @@
 # PytSite Currency Plugin
 
+
 ## Changelog
+
+
+### 1.6 (2018-08-09)
+
+Support of `odm_auth-1.9`.
 
 
 ### 1.5 (2018-04-25)
